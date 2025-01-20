@@ -1,0 +1,32 @@
+<h2>Lista de Roles</h2>
+<ul>
+  <li *ngFor="let rol of roles">{{ rol.nombre }}</li>
+</ul>
+
+<h3>Crear Nuevo Usuario</h3>
+<form (submit)="crearUsuario()">
+  <label for="nombre">Nombre del Usuario</label>
+  <input
+    id="nombre"
+    [(ngModel)]="nuevoUsuario.nombre"
+    name="nombre"
+    type="text"
+    placeholder="Nombre de usuario"
+    required
+  />
+
+  <label for="rol">Rol</label>
+  <select
+    id="rol"
+    [(ngModel)]="nuevoUsuario.id_rol"
+    name="id_rol"
+    required
+  >
+    <option *ngFor="let rol of roles" [value]="rol.id_rol">
+      {{ rol.nombre }}
+    </option>
+  </select>
+
+  <button type="submit">Crear Usuario</button>
+</form>
+

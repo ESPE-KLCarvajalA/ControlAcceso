@@ -1,0 +1,25 @@
+<div class="dashboard-container">
+    <header class="header">
+      <h1>Bienvenido, <span class="role-name">Contador</span></h1>
+    </header>
+  
+    <div class="panel financial-info">
+      <h2 class="panel-title">Información Financiera</h2>
+      <ul class="panel-list">
+        <li><a href="/reportes" class="panel-link">Ver Reportes Financieros</a></li>
+        <li><a href="/transacciones" class="panel-link">Gestión de Transacciones</a></li>
+        <li><a href="/balances" class="panel-link">Ver Balances</a></li>
+      </ul>
+    </div>
+  
+    <div class="permissions">
+      <h2 class="panel-title">Permisos Asignados</h2>
+      <p class="role-description">Rol: {{ role }}</p>
+      <ul class="permissions-list">
+        <li *ngIf="role === 'Contador'">Acceso a Reportes Financieros</li>
+        <li *ngIf="role === 'Contador'">Acceso a Balances</li>
+        <li *ngIf="role === 'Contador'">Gestión de Transacciones</li>
+      </ul>
+    </div>
+  </div>
+  
